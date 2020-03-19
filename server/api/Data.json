@@ -1,0 +1,119 @@
+{
+    "acoes": [
+        {
+            "nome": "Apple",
+            "preco": 200
+        },
+        {
+            "nome": "Microsoft",
+            "preco": 300
+        },
+        {
+            "nome": "Blizzard",
+            "preco": 100
+        },
+        {
+            "nome": "Amazon",
+            "preco": 250
+        },
+        {
+            "nome": "Nestle",
+            "preco": 145
+        },
+        {
+            "nome": "Discord",
+            "preco": 75
+        },
+        {
+            "nome": "Steam",
+            "preco": 168
+        },
+        {
+            "nome": "Google",
+            "preco": 320
+        },
+        {
+            "nome": "Redhat",
+            "preco": 90
+        },
+        {
+            "nome": "Riot",
+            "preco": 245
+        }
+    ],
+    "commodities": [
+        {
+            "categoria": {
+                "nome": "Energia",
+                "produtos": [
+                    {
+                        "nome": "Óleo",
+                        "preco": 20,
+                        "unidade": "Barril"
+                    },
+                    {
+                        "nome": "Gás Natural",
+                        "preco": 1.57,
+                        "unidade": "mil BTUs"
+                    }
+                ]
+            }
+        },
+        {
+            "categoria": {
+                "nome": "Metais",
+                "produtos": [
+                    {
+                        "nome": "Ouro",
+                        "preco": 1500,
+                        "unidade": "Grama"
+                    },
+                    {
+                        "nome": "Cobre",
+                        "preco": 2.14,
+                        "unidade": "Grama"
+                    }
+                ]
+            }
+        },
+        {
+            "categoria": {
+                "nome": "Agricultura",
+                "produtos": [
+                    {
+                        "nome": "Milho",
+                        "preco": 300,
+                        "unidade": "Quilo"
+                    },
+                    {
+                        "nome": "Soja",
+                        "preco": 825,
+                        "unidade": "Quilo"
+                    }
+                ]
+            }
+        }
+    ],
+    "moedas": [
+        {
+            "nome": "Euro",
+            "valor": 1.10
+        },
+        {
+            "nome": "Real",
+            "valor": 5
+        },
+        {
+            "nome": "Dólar Canadense",
+            "valor": 0.70
+        },
+        {
+            "nome": "Peso Mexicano",
+            "valor": 23
+        },
+        {
+            "nome": "Peso Argentino",
+            "valor": 63
+        }
+    ]
+}
