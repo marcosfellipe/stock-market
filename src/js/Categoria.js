@@ -1,18 +1,40 @@
-import React from 'react';
-import MarketController from './MarketController';
+import React, { Component } from 'react';
 
-function Categoria(props) {
-    console.log(MarketController.obterAcoes());
-    return(
+class Categoria extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lista: []
+    };
+  }
+
+  componentDidMount() {
+    this.renderItem();
+  }
+
+  renderItem = async function () {
+    let lista = await this.props.getProdutos().then(produtos => {
+      return produtos.map((produto, i) => {
+        return <li key={i}>
+                {produto.nome} <span>R$:{produto.preco}</span>
+               </li>
+      })
+    });
+    this.setState({
+      lista: this.state.lista.concat(lista)
+    });
+  }
+
+  render() {
+    return (
       <section>
-        <p><a href="#">{props.titulo}</a></p>
+        <p><a href="#">{this.props.titulo}</a></p>
         <ul>
-          <li>Açao 1</li>
-          <li>Acao 2</li>
-          <li>Acao 3</li>
+          {this.state.lista}
         </ul>
-      </section>
+      </section >
     );
+  }
 }
 
 export default Categoria;
