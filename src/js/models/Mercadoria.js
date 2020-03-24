@@ -1,4 +1,4 @@
-export class Mercadoria {
+export default class Mercadoria {
     constructor(nome, preco) {
         this._nome = nome;
         this._preco = preco;

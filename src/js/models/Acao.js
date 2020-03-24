@@ -1,6 +1,6 @@
-import { Mercadoria } from "./Mercadoria";
+import Mercadoria from "./Mercadoria";
 
-export class Acao extends Mercadoria {
+export default class Acao extends Mercadoria {
     constructor(nome, preco) {
         super(nome, preco);
         this._variacao = Math.random();
