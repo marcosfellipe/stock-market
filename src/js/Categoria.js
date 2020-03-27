@@ -19,7 +19,8 @@ class Categoria extends Component {
                 {produto.nome} <span>R$:{produto.preco}</span>
                </li>
       })
-    });
+    })
+    .catch(err => console.log(err));
     this.setState({
       lista: this.state.lista.concat(lista)
     });
@@ -28,7 +29,7 @@ class Categoria extends Component {
   render() {
     return (
       <section>
-        <p><a href="#">{this.props.titulo}</a></p>
+        <p><a href="/#">{this.props.titulo}</a></p>
         <ul>
           {this.state.lista}
         </ul>

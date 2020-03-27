@@ -1,3 +1,5 @@
+import Mercadoria from './Mercadoria';
+
 export default class Commoditie extends Mercadoria {
     constructor(nome, preco, unidade) {
         super(nome, preco);

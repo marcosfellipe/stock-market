@@ -6,13 +6,21 @@ import Footer from './Footer';
 import MarketController from './controllers/MarketController';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this._MarketController = new MarketController();
+    console.log(this._MarketController);
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <main>
-          <Categoria titulo="Acoes" getProdutos={MarketController.obterAcoes} />
-          <Categoria titulo="Moedas" getProdutos={MarketController.obterMoedas} />
+          <Categoria titulo="Acoes" getProdutos={this._MarketController.obterAcoes} />
+          <Categoria titulo="Moedas" getProdutos={this._MarketController.obterMoedas} />
+          <h2>Commodities</h2>
+          <Categoria titulo="Energia" getProdutos={() => this._MarketController.obterCommodities()} />
         </main>
         <Footer />
       </div>

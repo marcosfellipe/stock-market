@@ -25,6 +25,6 @@ export default class CategoriaCommoditie {
     }
 
     obter(nome = '') {
-        return nome ? this._commodities.find(com => com.nome == nome) : this._commodities;     
+        return nome ? this._commodities.find(com => com.nome === nome) : this._commodities;     
     }
 }

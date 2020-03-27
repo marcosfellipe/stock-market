@@ -43,55 +43,49 @@
     ],
     "commodities": [
         {
-            "categoria": {
-                "nome": "Energia",
-                "produtos": [
-                    {
-                        "nome": "Óleo",
-                        "preco": 20,
-                        "unidade": "Barril"
-                    },
-                    {
-                        "nome": "Gás Natural",
-                        "preco": 1.57,
-                        "unidade": "mil BTUs"
-                    }
-                ]
-            }
+            "nome": "Energia",
+            "produtos": [
+                {
+                    "nome": "Óleo",
+                    "preco": 20,
+                    "unidade": "Barril"
+                },
+                {
+                    "nome": "Gás Natural",
+                    "preco": 1.57,
+                    "unidade": "mil BTUs"
+                }
+            ]
         },
         {
-            "categoria": {
-                "nome": "Metais",
-                "produtos": [
-                    {
-                        "nome": "Ouro",
-                        "preco": 1500,
-                        "unidade": "Grama"
-                    },
-                    {
-                        "nome": "Cobre",
-                        "preco": 2.14,
-                        "unidade": "Grama"
-                    }
-                ]
-            }
+            "nome": "Metais",
+            "produtos": [
+                {
+                    "nome": "Ouro",
+                    "preco": 1500,
+                    "unidade": "Grama"
+                },
+                {
+                    "nome": "Cobre",
+                    "preco": 2.14,
+                    "unidade": "Grama"
+                }
+            ]
         },
         {
-            "categoria": {
-                "nome": "Agricultura",
-                "produtos": [
-                    {
-                        "nome": "Milho",
-                        "preco": 300,
-                        "unidade": "Quilo"
-                    },
-                    {
-                        "nome": "Soja",
-                        "preco": 825,
-                        "unidade": "Quilo"
-                    }
-                ]
-            }
+            "nome": "Agricultura",
+            "produtos": [
+                {
+                    "nome": "Milho",
+                    "preco": 300,
+                    "unidade": "Quilo"
+                },
+                {
+                    "nome": "Soja",
+                    "preco": 825,
+                    "unidade": "Quilo"
+                }
+            ]
         }
     ],
     "moedas": [
