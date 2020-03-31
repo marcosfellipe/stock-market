@@ -5,13 +5,17 @@ import Commoditie from '../models/Commoditie';
 import CategoriaCommoditie from '../models/CategoriaCommoditie';
 
 export default class MarketController {
-    constructor() {
-        this._listaCategorias = [];
-        this._init();
+    obterAcoes() {
+        return MarketConnection
+            .getAcoes()
+            .then(acoes => {
+                return acoes.map(acao => new Acao(acao.nome, acao.preco));
+            })
+            .catch(err => console.log(err));
     }
 
-    _init = async () => {
-        this._listaCategorias = MarketConnection
+    obterCommodities = tipo => {
+        return MarketConnection
         .getCommodities()
         .then(categorias => {
             return categorias.map(categoria => {
@@ -23,23 +27,7 @@ export default class MarketController {
         .catch(err => console.log(err));
     }
 
-    obterAcoes() {
-        return MarketConnection
-            .getAcoes()
-            .then(acoes => {
-                return acoes.map(acao => new Acao(acao.nome, acao.preco));
-            })
-            .catch(err => console.log(err));
-    }
-
-    obterCommodities() { 
-        console.log(this._listaCategorias);
-    }
-
-    filtrarCommodities(nome) {
-        console.log(this._listaCategorias);
-        return this._listaCategorias.find(nome);
-    }
+    
 
     obterMoedas() {
         return MarketConnection

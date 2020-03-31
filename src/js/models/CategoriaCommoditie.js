@@ -7,6 +7,10 @@ export default class CategoriaCommoditie {
         this._commodities = commodities;
     }
 
+    get nome() {
+        return this._nome;
+    }
+
     adicionar(commoditie) {
        if (commoditie instanceof Commoditie) {
           this._commodities.push(commoditie); 

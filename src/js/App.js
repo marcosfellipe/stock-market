@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this._MarketController = new MarketController();
-    console.log(this._MarketController);
   }
 
   render() {
@@ -20,7 +19,7 @@ class App extends Component {
           <Categoria titulo="Acoes" getProdutos={this._MarketController.obterAcoes} />
           <Categoria titulo="Moedas" getProdutos={this._MarketController.obterMoedas} />
           <h2>Commodities</h2>
-          <Categoria titulo="Energia" getProdutos={() => this._MarketController.obterCommodities()} />
+          <Categoria titulo="Energia" categoria="commoditie" tipo="energia" getProdutos={this._MarketController.obterCommodities} />
         </main>
         <Footer />
       </div>

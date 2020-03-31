@@ -13,14 +13,28 @@ class Categoria extends Component {
   }
 
   renderItem = async function () {
-    let lista = await this.props.getProdutos().then(produtos => {
-      return produtos.map((produto, i) => {
-        return <li key={i}>
-                {produto.nome} <span>R$:{produto.preco}</span>
-               </li>
+    let lista;
+    if (this.props.categoria === 'commoditie') {
+      lista = await this.props.getProdutos().then(categorias => {
+        return categorias.find(categoria => categoria.nome.toLowerCase() === this.props.tipo.toLowerCase());
       })
-    })
-    .catch(err => console.log(err));
+        .then(categoria => {
+          return categoria.obter().map((commoditie, i) => {
+            return <li key={i}>
+              {commoditie.nome} <span>R$:{commoditie.preco}</span>
+            </li>
+          });
+        });
+    } else {
+      lista = await this.props.getProdutos().then(produtos => {
+        return produtos.map((produto, i) => {
+          return <li key={i}>
+            {produto.nome} <span>R$:{produto.preco}</span>
+          </li>
+        })
+      })
+        .catch(err => console.log(err));
+    }
     this.setState({
       lista: this.state.lista.concat(lista)
     });
