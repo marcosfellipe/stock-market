@@ -14,8 +14,8 @@ export default class MarketController {
             .catch(err => console.log(err));
     }
 
-    obterCommodities = tipo => {
-        return MarketConnection
+    async obterCommodities() {
+        return await MarketConnection
         .getCommodities()
         .then(categorias => {
             return categorias.map(categoria => {
@@ -29,8 +29,8 @@ export default class MarketController {
 
     
 
-    obterMoedas() {
-        return MarketConnection
+    async obterMoedas() {
+        return await MarketConnection
             .getMoedas()
             .then(moedas => {
                 return moedas.map(moeda => new Mercadoria(moeda.nome, moeda.valor));

@@ -9,9 +9,9 @@ class Acoes extends Component {
     }
 
     renderAcoes = async () => {
-        let acoes = await this.props.getItens().then(acoes => {
+        let acoes = await this.props.data.then(acoes => {
             return acoes.map(acao => {
-                return <li>{acao.nome}<span>R$:{acao.preco}</span></li>;
+                return <li key={acao.nome.toString()}>{acao.nome}<span>R$:{acao.preco}</span></li>;
             });
         });
         this.setState({

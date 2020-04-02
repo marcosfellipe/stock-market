@@ -10,6 +10,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this._MarketController = new MarketController();
+    this._listAcoes = [];
+    this._listMoedas = [];
+    this._listCommodities = [];
+    this._init();
+  }
+
+  _init() {
+    this._listAcoes = this._MarketController.obterAcoes();
+    this._listMoedas = this._MarketController.obterMoedas();
+    this._listCommodities = this._MarketController.obterCommodities();
   }
 
   render() {
@@ -17,9 +27,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Acoes getItens={this._MarketController.obterAcoes} />
-          <Categoria titulo="Moedas" getProdutos={this._MarketController.obterMoedas} />
-          <Categoria titulo="Energia" categoria="commoditie" tipo="energia" getProdutos={this._MarketController.obterCommodities} />
+          <Acoes data={this._listAcoes} />
+          <Categoria titulo="Moedas" categoria="moedas" data={this._listMoedas} />
+          <Categoria titulo="Commodities" categoria="commodities" data={this._listCommodities} />
         </main>
         <Footer />
       </div>

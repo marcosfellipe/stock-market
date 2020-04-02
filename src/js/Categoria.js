@@ -9,32 +9,27 @@ class Categoria extends Component {
   }
 
   componentDidMount() {
-    this.renderItem();
+    this._renderItem();
   }
 
-  renderItem = async function () {
-    let lista;
-    if (this.props.categoria === 'commoditie') {
-      lista = await this.props.getProdutos().then(categorias => {
-        return categorias.find(categoria => categoria.nome.toLowerCase() === this.props.tipo.toLowerCase());
-      })
-        .then(categoria => {
-          return categoria.obter().map((commoditie, i) => {
-            return <li key={i}>
-              {commoditie.nome} <span>R$:{commoditie.preco}</span>
+  _renderItem = async function () {
+    let lista = null;
+    if (this.props.categoria === 'commodities') {
+      lista = await this.props.data.then(listCategorias => {
+        return listCategorias.map(categoria => {
+          return (<li>
+            <ul>{categoria.nome}</ul>
+              {categoria.commodities.map(produto => <li>{produto.nome}</li>)}
             </li>
-          });
-        });
-    } else {
-      lista = await this.props.getProdutos().then(produtos => {
-        return produtos.map((produto, i) => {
-          return <li key={i}>
-            {produto.nome} <span>R$:{produto.preco}</span>
-          </li>
-        })
+          );
       })
-        .catch(err => console.log(err));
+      });
+    } else {
+      lista = await this.props.data.then(listItens => {
+        return listItens.map(itens => <li key={itens.nome.toString()}>{itens.nome}</li>);
+      });
     }
+
     this.setState({
       lista: this.state.lista.concat(lista)
     });
@@ -47,7 +42,7 @@ class Categoria extends Component {
         <ul>
           {this.state.lista}
         </ul>
-      </section >
+      </section>
     );
   }
 }
