@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-title {
+    font-family: 'Source code pro', monospace;
+    font-weight: 400;
+}
+
+.list-item {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25em;
+    justify-content: space-between;
+    padding: .20em 0;
+    margin: .5em 1.10em;
+    border-bottom: 1px solid #0000005c;
+}
+
+.list-item span {
+    justify-self: left;
+}

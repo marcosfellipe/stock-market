@@ -5,8 +5,11 @@ import Commoditie from '../models/Commoditie';
 import CategoriaCommoditie from '../models/CategoriaCommoditie';
 
 export default class MarketController {
+    constructor() {
+        this._connection = new MarketConnection();
+    }
     obterAcoes() {
-        return MarketConnection
+        return this._connection
             .getAcoes()
             .then(acoes => {
                 return acoes.map(acao => new Acao(acao.nome, acao.preco));
@@ -15,7 +18,7 @@ export default class MarketController {
     }
 
     async obterCommodities() {
-        return await MarketConnection
+        return await this._connection
         .getCommodities()
         .then(categorias => {
             return categorias.map(categoria => {
@@ -30,7 +33,7 @@ export default class MarketController {
     
 
     async obterMoedas() {
-        return await MarketConnection
+        return await this._connection
             .getMoedas()
             .then(moedas => {
                 return moedas.map(moeda => new Mercadoria(moeda.nome, moeda.valor));

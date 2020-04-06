@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+.header-text {
+    font-family: 'Source Code Pro', sans-serif;
+    text-transform: uppercase;
+    color: #00a505;
+}

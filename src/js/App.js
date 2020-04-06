@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import Secao from './Components/Secao';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import MarketController from './controllers/MarketController';
 
 class App extends Component {
