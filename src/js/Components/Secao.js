@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../../css/Secao.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { Animated } from 'react-animated-css';
+import Loading from './Loading';
 
-function Secao(props) {
-  let lista = null;
-  let retorno = null;
-  if (!props.data) {
-    retorno = <div><p>Loading...</p></div>;
-  } else {
-    if (props.tipo === 'commodities') {
-      lista = props.data.map(categoria => {
+class Secao extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isToggled: true,
+      isVisible: true,
+      lista: null,
+    };
+  }
+
+  componentDidUpdate = () => {
+    if (this.state.lista)
+      return;
+
+    let lista;
+    if (this.props.tipo === 'commodities') {
+      lista = this.props.data.map(categoria => {
         return (
           <li key={categoria.nome.toString()}>
             <h3 className="sub-list-title">{categoria.nome}</h3>
@@ -29,17 +40,32 @@ function Secao(props) {
         );
       });
     } else {
-      lista = props.data.map(item => <li className="list-item" key={item.nome.toString()}>{item.nome}<span>R$ {item.preco}</span></li>);
+      lista = this.props.data.map(item => <li className="list-item" key={item.nome.toString()}>{item.nome}<span>R$ {item.preco}</span></li>);
     }
-    retorno = <ul>{lista}</ul>;
+    this.setState({
+      lista: lista
+    });
   }
 
-  return (
-    <section>
-      <h2 className="list-title">{props.titulo}<FontAwesomeIcon icon={faCaretDown}/></h2>
-      {retorno}
-    </section>
-  );
+  toggle = () => {
+    this.setState((state, props) => {
+     return {isToggled: !state.isToggled};  
+    }); 
+    setTimeout(() => this.setState((state, props) => {
+      return {isVisible: !state.isVisible};
+    }), this.state.isVisible ? 250 : 0);
+  }
+
+  render() {
+    return (
+      <section>
+        <h2 className="list-title" onClick={this.toggle}>{this.props.titulo}<FontAwesomeIcon icon={faCaretDown} /></h2>
+        <Animated animationIn="fadeIn" animationOut="fadeOut" animationOutDuration={250} isVisible={this.state.isToggled} style={this.state.isVisible ? null : {display: "none"}}>
+          {this.props.data ? <ul>{this.state.lista}</ul> : <Loading />}
+        </Animated>
+      </section>
+    );
+  }
 }
 
 export default Secao;

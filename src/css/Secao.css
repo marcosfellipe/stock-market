@@ -4,6 +4,7 @@
 ul {
     list-style: none;
     padding: 0;
+    overflow: hidden;
 }
 
 .list-title {
@@ -30,4 +31,8 @@ ul {
 
 .list-item span {
     justify-self: left;
+}
+
+.hidden {
+    display: none;
 }
