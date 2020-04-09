@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/Secao.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Animated } from 'react-animated-css';
 import Loading from './Loading';
 
@@ -59,9 +59,15 @@ class Secao extends Component {
   render() {
     return (
       <section>
-        <h2 className="list-title" onClick={this.toggle}>{this.props.titulo}<FontAwesomeIcon icon={faCaretDown} /></h2>
-        <Animated animationIn="fadeIn" animationOut="fadeOut" animationOutDuration={250} isVisible={this.state.isToggled} style={this.state.isVisible ? null : {display: "none"}}>
-          {this.props.data ? <ul>{this.state.lista}</ul> : <Loading />}
+        <h2 className="list-title" onClick={this.toggle}>
+          <FontAwesomeIcon icon={faAngleDown} rotation={this.state.isVisible ? null : 270} />
+          {this.props.titulo}
+        </h2>
+        <Animated animationIn="fadeIn" animationOut="fadeOut" animationOutDuration={250} 
+          isVisible={this.state.isToggled} style={this.state.isVisible ? null : {display: "none"}}>
+          { 
+            this.props.data ? <ul>{this.state.lista}</ul> : <Loading /> 
+          }
         </Animated>
       </section>
     );

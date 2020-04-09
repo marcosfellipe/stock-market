@@ -3,8 +3,8 @@ import '../../css/Footer.css';
 
 function Footer() {
     return (
-        <footer>
-            <p className="footer-text">Copyright&copy; 2020</p>
+        <footer className="footer">
+            <p>Copyright&copy; 2020</p>
         </footer>
     );
 }

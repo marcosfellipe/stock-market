@@ -1,3 +1,10 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
+}
+
+.content {
+  flex: 1 0 auto;
 }

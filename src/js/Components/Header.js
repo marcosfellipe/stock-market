@@ -4,8 +4,7 @@ import '../../css/Header.css';
 function Header() {
     return (
         <header>
-            <h1 className="header-text">Stock Market</h1>
-            <hr />
+            <h1 className="header">Stock Market</h1>
         </header>
     );
 }

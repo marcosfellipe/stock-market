@@ -1,3 +1,9 @@
-.footer-text {
+.footer {
+    flex-shrink: 0;
     font-size: .90em;
+    font-family: 'Source Code Pro', sans-serif;
+    color: #00a505;
+    border-top: 1px solid #00a505;
+    padding: .80em;
+    margin: 0;
 }

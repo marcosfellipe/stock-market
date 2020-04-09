@@ -31,8 +31,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <main>
-          <Secao titulo="Acoes" tipo="acoes" data={this.state.acoes} />
+        <main className="content">
+          <Secao titulo="Ações" tipo="acoes" data={this.state.acoes} />
           <Secao titulo="Moedas" tipo="moedas" data={this.state.moedas} />
           <Secao titulo="Commodities" tipo="commodities" data={this.state.commodities} />
         </main>

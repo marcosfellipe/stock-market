@@ -8,11 +8,18 @@ ul {
 }
 
 .list-title {
+    display: flex;
+    align-items: center;
     font-family: 'Source code pro', monospace;
     font-weight: 500;
-    display: flex;
-    justify-content: space-between;
+    background-color: #9fff9f;
+    color: #006900;
     margin: .80em;
+    padding: .30em;
+}
+
+.list-title .fa-angle-down {
+    margin-right: .25em;
 }
 
 .sub-list-title {
