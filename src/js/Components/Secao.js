@@ -16,7 +16,7 @@ class Secao extends Component {
   }
 
   componentDidUpdate = () => {
-    if (this.state.lista)
+    if (this.state.lista || this.props.data === undefined)
       return;
 
     let lista;
