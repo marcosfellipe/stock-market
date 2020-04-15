@@ -17,11 +17,3 @@
 .header svg {
     padding: .25em;
 }
-
-.nav-menu {
-    position: absolute;
-    width: 90vw;
-    height: 100vh;
-    background-color: #ffffff;
-    z-index: 1;
-}

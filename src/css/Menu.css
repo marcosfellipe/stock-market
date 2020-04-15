@@ -1,0 +1,35 @@
+.nav-menu {
+    position: absolute;
+    width: 90vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1;
+    left: -90%;
+    transition: left 300ms;
+}
+
+.nav-menu-close {
+    text-align: right;
+    padding: 1.5em 2em;
+    margin-bottom: 1em;
+}
+
+.nav-menu-open {
+    left: 0;
+}
+
+.nav-menu-list {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 5em;
+    text-align: justify;
+}
+
+.menu-list-item {
+    padding: .5em;
+    margin: .25em;
+}
+
+.list-item-text {
+    margin-left: .5em;
+}
