@@ -7,29 +7,24 @@ import Menu from './Menu';
 class Header extends Component {
     constructor(props) {
         super(props);
-        this._menu = null;
+        this.state = {
+            visible: false
+        };
+        this.menuToggle = this.menuToggle.bind(this);
     }
 
-    componentDidMount = () => {
-        this._menu = document.getElementById('menu');
-    }
-
-    menuToggle = () => {
-        if (this._menu.classList.contains('nav-menu-open')) {
-            this._menu.classList.remove('nav-menu-open');
-        } else {
-            this._menu.classList.add('nav-menu-open');
-        }
+    menuToggle() {
+        this.setState((state, props) => {
+            return { visible: !state.visible };
+        });
     }
 
     render() {
         return (
-            <>
             <header>
                 <h1 className="header">Stock Market<FontAwesomeIcon icon={faBars} size="xs" onClick={this.menuToggle} /></h1>
+                <Menu close={this.menuToggle} visible={this.state.visible} />
             </header>
-            <Menu close={this.menuToggle} />
-            </>
         );
     }
 }

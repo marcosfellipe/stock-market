@@ -5,8 +5,9 @@ import { faTimes, faHome, faCog, faQuestionCircle } from '@fortawesome/free-soli
 
 function Menu(props) {
     return (
-        <div id="menu" className="nav-menu">
-            <div className="nav-menu-close">
+        <>
+        <div className={"nav-menu" + (props.visible ? " nav-menu-open" : "")}>
+            <div className="btn-menu-close">
                 <FontAwesomeIcon icon={faTimes} size="lg" onClick={props.close} />
             </div>
             <nav>
@@ -26,6 +27,8 @@ function Menu(props) {
                 </ul>
             </nav>
         </div>
+        <div className={props.visible ? "menu-bg-open" : "menu-bg-close"} onClick={props.close}></div>
+        </>
     );
 }
 

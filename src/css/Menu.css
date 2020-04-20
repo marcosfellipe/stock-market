@@ -2,20 +2,37 @@
     position: absolute;
     width: 90vw;
     height: 100vh;
-    background-color: #ffffff;
+    color: #00a505;
+    background-color: #f3fff0;
     z-index: 1;
+    top: 0;
     left: -90%;
     transition: left 300ms;
 }
 
-.nav-menu-close {
+.nav-menu-open {
+    left: 0;
+}
+
+.menu-bg-open {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(21, 134, 0, 0.4);
+}
+  
+.menu-bg-close {
+    display: none;
+}
+
+.btn-menu-close {
     text-align: right;
     padding: 1.5em 2em;
     margin-bottom: 1em;
-}
-
-.nav-menu-open {
-    left: 0;
 }
 
 .nav-menu-list {
