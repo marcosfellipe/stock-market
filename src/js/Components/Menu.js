@@ -13,15 +13,15 @@ function Menu(props) {
             <nav>
                 <ul className="nav-menu-list">
                     <li className="menu-list-item">
-                        <FontAwesomeIcon icon={faHome} size="lg" />
+                        <FontAwesomeIcon className="list-item-icon" icon={faHome} size="lg" />
                         <span className="list-item-text">Home</span>
                     </li>
                     <li className="menu-list-item">
-                        <FontAwesomeIcon icon={faCog} size="lg" />
+                        <FontAwesomeIcon className="list-item-icon" icon={faCog} size="lg" />
                         <span className="list-item-text">Configurações</span>
                     </li>
                     <li className="menu-list-item">
-                        <FontAwesomeIcon icon={faQuestionCircle} size="lg" />
+                        <FontAwesomeIcon className="list-item-icon" icon={faQuestionCircle} size="lg" />
                         <span className="list-item-text">Sobre</span>
                     </li>
                 </ul>

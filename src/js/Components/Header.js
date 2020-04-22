@@ -21,8 +21,9 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
-                <h1 className="header">Stock Market<FontAwesomeIcon icon={faBars} size="xs" onClick={this.menuToggle} /></h1>
+            <header  className="header">
+                <h1>Stock Market</h1>
+                <FontAwesomeIcon className="btn-open-menu" icon={faBars} size="2x" onClick={this.menuToggle} />
                 <Menu close={this.menuToggle} visible={this.state.visible} />
             </header>
         );
