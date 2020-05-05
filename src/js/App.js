@@ -1,42 +1,28 @@
 import React, { Component } from 'react';
-import '../css/App.css';
-import Secao from './Components/Secao';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import Header from './Components/Header';
-import Footer from './Components/Footer';
-import MarketController from './controllers/MarketController';
+import Home from './Components/Home';
+import About from './Components/About';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this._MarketController = new MarketController();
-    this.state = {
-      acoes: null,
-      moedas: null,
-      commodities: null
-    };
-  }
-
-  async componentDidMount() {
-    let acoes = await this._MarketController.obterAcoes();
-    let moedas = await this._MarketController.obterMoedas();
-    let commodities = await this._MarketController.obterCommodities();
-    this.setState({
-      acoes: acoes,
-      moedas: moedas,
-      commodities: commodities
-    });
-  }
-
   render() {
     return (
       <div className="App">
-        <Header />
-        <main className="content">
-          <Secao titulo="Ações" tipo="acoes" data={this.state.acoes} />
-          <Secao titulo="Moedas" tipo="moedas" data={this.state.moedas} />
-          <Secao titulo="Commodities" tipo="commodities" data={this.state.commodities} />
-        </main>
-        <Footer />
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

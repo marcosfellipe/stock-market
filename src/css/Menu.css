@@ -47,8 +47,13 @@
     margin: .25em;
 }
 
-.list-item-text {
+.list-item-link {
     margin-left: .5em;
+    text-decoration: none;
+}
+
+.list-item-link:visited {
+    color: #00a505;
 }
 
 @media screen and (min-width: 760px) {

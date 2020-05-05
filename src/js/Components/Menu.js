@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/Menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faHome, faCog, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Menu(props) {
     return (
@@ -14,15 +15,15 @@ function Menu(props) {
                 <ul className="nav-menu-list">
                     <li className="menu-list-item">
                         <FontAwesomeIcon className="list-item-icon" icon={faHome} size="lg" />
-                        <span className="list-item-text">Home</span>
+                        <Link to="/" className="list-item-link" onClick={props.close}>Home</Link>
                     </li>
                     <li className="menu-list-item">
                         <FontAwesomeIcon className="list-item-icon" icon={faCog} size="lg" />
-                        <span className="list-item-text">Configurações</span>
+                        <span className="list-item-link">Configurações</span>
                     </li>
                     <li className="menu-list-item">
                         <FontAwesomeIcon className="list-item-icon" icon={faQuestionCircle} size="lg" />
-                        <span className="list-item-text">Sobre</span>
+                        <Link to="/about" className="list-item-link" onClick={props.close}>Sobre</Link>
                     </li>
                 </ul>
             </nav>
